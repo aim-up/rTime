@@ -1,23 +1,28 @@
-%h1 Sign Up
-= form_for @user do |f|
-	- if @user.errors.any?
-		.error_messages
-			%h2 Form is invalid
-			%ul
-				- for message in @user.errors.full_messages
-					%li
-						= message
-	.field
-		= f.label :name
-		= f.text_field :name
-	.field
-		= f.label :email
-		= f.text_field :email
-	.field
-		= f.label :password
-		= f.password_field :password
-	.field
-		= f.label :password_confirmation, 'Confirmation'
-		= f.password_field :password_confirmation
-	.actions
-		= f.submit
+.span-18
+	%h1 Sign Up
+	= form_for @user do |f|
+		- if @user.errors.any?
+			.error_messages
+				%h2 Form is invalid
+				%ul
+					- for message in @user.errors.full_messages
+						%li
+							= message
+		.field.span-2
+			= f.label :name
+		.field.span-16.last
+			= f.text_field :name
+		.field.span-2
+			= f.label :email
+		.field.span-16.last
+			= f.text_field :email
+		.field.span-2
+			= f.label :password
+		.field.span-16.last
+			= f.password_field :password
+		.field.span-2
+			= f.label :password_confirmation, 'Confirmation'
+		.field.span-16.last
+			= f.password_field :password_confirmation
+		.actions.span-16.last
+			= f.submit
