@@ -12,6 +12,7 @@
 		|
 		= link_to "ePlanroom", "http://eplanroom.reprographix.com/"
 	.span-4.last &nbsp;
-.span-24.large.last#debug
-	%p
-		= debug(params) if Rails.env.development?
+- if Rails.env.development?
+	.span-24.large.last#debug
+		%p
+			= debug(params)
