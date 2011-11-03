@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if current_user.update_attributes(params[:user])
       @last_punch = current_user.punches.last
       if @last_punch
-        @last_punch.pull = Time.now
+        @last_punch.pull = Time.zone.now
         @last_punch.save
       end
       @punch = current_user.punches.new(:status => params[:user][:status])

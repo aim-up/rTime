@@ -1,8 +1,8 @@
 .span-18
 	#time.span-4
-		= Time.now.strftime("%I:%M")
+		= Time.zone.now.strftime("%I:%M")
 	#date.span-5
-		= Time.now.strftime("%b %d")
+		= Time.zone.now.strftime("%b %d")
 	.span-9
 		- if current_user
 			%p.large
