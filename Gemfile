@@ -17,15 +17,12 @@ group :production do
   gem 'pg'
 end
 
-group :development do
+group :development, :test do
   gem 'rspec-rails'
   gem 'spork'
   gem 'sqlite3'
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'webrat'
-  gem 'spork'
-  gem 'sqlite3'
 end
