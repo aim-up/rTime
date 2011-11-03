@@ -1,0 +1,25 @@
+!!! 5
+%html{:lang => "en-US"}
+	%head
+		%meta{:charset => "utf-8"}
+		= csrf_meta_tags
+		= stylesheet_link_tag    "vendor",       :media => "screen"
+		= stylesheet_link_tag    "application",  :media => "screen"
+		= stylesheet_link_tag    "vendor-print", :media => "print"
+		/[if lt IE 8]
+			= stylesheet_link_tag  "vendor-ie",    :media => "screen"
+		= javascript_include_tag "application"
+		/[if lt IE 9]
+			%script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
+		%title rShoppe
+	%body
+		.container
+			.span-24
+				= render 'layouts/header'
+				= render 'layouts/left'
+				.span-18
+					= render 'layouts/intro'
+					%article
+						= yield
+				= render 'layouts/right'
+				= render 'layouts/footer'

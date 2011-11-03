@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'haml'
+gem 'heroku'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
@@ -14,6 +15,7 @@ end
 
 group :development do
   gem 'rspec-rails'
+  gem 'spork'
 end
 
 group :test do

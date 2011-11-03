@@ -1,0 +1,30 @@
+#banner { background:{
+	image: url("repro_banner_bg.png");
+	repeat: repeat-x;
+	}
+	;}
+#footer {
+	background-color: #000;
+	color: #fff;
+	background-image: linear-gradient(bottom, rgb(32,160,240) 0%, rgb(0,0,0) 77%);
+	background-image: -o-linear-gradient(bottom, rgb(32,160,240) 0%, rgb(0,0,0) 77%);
+	background-image: -moz-linear-gradient(bottom, rgb(32,160,240) 0%, rgb(0,0,0) 77%);
+	background-image: -webkit-linear-gradient(bottom, rgb(32,160,240) 0%, rgb(0,0,0) 77%);
+	background-image: -ms-linear-gradient(bottom, rgb(32,160,240) 0%, rgb(0,0,0) 77%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(32,160,240)),
+		color-stop(0.77, rgb(0,0,0))
+	);
+	a {
+		color: #2af;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+			color: #4cf;
+		};
+	}
+	}
