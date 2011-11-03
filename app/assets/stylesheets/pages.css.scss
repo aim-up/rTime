@@ -1,8 +1,11 @@
-#banner { background:{
-	image: url("repro_banner_bg.png");
-	repeat: repeat-x;
+body { background: #000; }
+.container { background: #fff; }
+#banner {
+	background: {
+		image: url("repro_banner_bg.png");
+		repeat: repeat-x;
+		};
 	}
-	;}
 #footer {
 	background-color: #000;
 	color: #fff;
