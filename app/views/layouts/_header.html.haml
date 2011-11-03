@@ -8,4 +8,9 @@
 			%p
 				Welcome,
 				= "#{current_user.name}."
-				= link_to "Sign Out", "#"
+				= link_to "Sign Out", logout_path, :method => :delete
+		- else
+			%p
+				= link_to "Sign Up", signup_path
+				|
+				= link_to "Log In", login_path

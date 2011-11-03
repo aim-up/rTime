@@ -1,7 +1,4 @@
 .span-18
-	- unless current_user
-		%p.large
-			= link_to "Sign Up", signup_path
 	#time.span-4
 		= Time.now.strftime("%I:%M")
 	#date.span-5
@@ -16,8 +13,8 @@
 				= f.select :status, User::STATUSES
 				= f.submit 'Submit'
 	#punches.span-9
-		%p.large Recent Activity:
 		- if current_user && current_user.punches.any?
+			%p.large Recent Activity:
 			- current_user.punches.each do |p|
 				.span-2
 					= p.status

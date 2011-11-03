@@ -7,6 +7,7 @@ RTime::Application.routes.draw do
   root :to => 'pages#home'
   match '/login',  :to => 'sessions#new' 
   match '/signup', :to => 'users#new'
+  match '/logout', :to => 'sessions#destroy'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
