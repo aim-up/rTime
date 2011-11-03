@@ -15,3 +15,20 @@
 				= f.label :status, 'Clock'
 				= f.select :status, User::STATUSES
 				= f.submit 'Submit'
+	#punches.span-9
+		%p.large Recent Activity:
+		- if current_user && current_user.punches.any?
+			- current_user.punches.each do |p|
+				.span-2
+					= p.status
+				.span-1
+					= p.created_at.strftime("%I:%M")
+				.span-2
+					&nbsp;
+					- if p.pull
+						= p.pull.strftime("%I:%M")
+				.span-4.last
+					&nbsp;
+					- if p.pull
+						= distance_of_time_in_words(p.created_at, p.pull)
+

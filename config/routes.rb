@@ -1,4 +1,6 @@
 RTime::Application.routes.draw do
+  get "punches/create"
+
   resources :sessions
   resources :users
   get "pages/home"
