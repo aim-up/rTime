@@ -21,7 +21,8 @@
 				.span-8.last
 				= f.submit     'Submit'
 	.span-14.center.last
-		%h2 Recent Activity:
+		- if current_user && current_user.punches.any?
+			%h2 Recent Activity:
 	.span-14.last
 		- if current_user && current_user.punches.any?
 			#punches.span-14.last
@@ -48,3 +49,5 @@
 						&nbsp;
 						- if p.comment
 							= p.comment
+	.spacer.span-18.last
+	.spacer.span-18.last
