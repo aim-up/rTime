@@ -1,5 +1,6 @@
 %section#intro
 	%header
-		%h2 Welcome to our time management system.
 		- flash.each do |key, value|
 			%div{:class => "flash " + key.to_s}= value
+		- unless current_user
+			%h2 Welcome to our time management system.

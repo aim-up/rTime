@@ -13,6 +13,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if current_user.update_attributes(params[:user])
+      redirect_to root_url, :success => "Update success!"
+    end
+  end
+  
   def show
     @user = User.find(params[:id])
   end

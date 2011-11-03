@@ -1,5 +1,11 @@
 %header#banner.span-24
 	.span-8
 		= image_tag "repro_logo_clear.png"
-	.span-16.last
+	.span-10
 		%h2 eClock 1.0
+	.span-6.large.last
+		- if current_user
+			%p
+				Welcome,
+				= "#{current_user.name}."
+				= link_to "Sign Out", "#"

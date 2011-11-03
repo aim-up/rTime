@@ -1,3 +1,17 @@
-.span-6
-	%p.large
-		= link_to "Sign Up", signup_path
+.span-18
+	- unless current_user
+		%p.large
+			= link_to "Sign Up", signup_path
+	#time.span-4
+		= Time.now.strftime("%I:%M")
+	#date.span-5
+		= Time.now.strftime("%b %d")
+	.span-9
+		- if current_user
+			%p.large
+				You are currently:
+				= current_user.status
+			= form_for current_user do |f|
+				= f.label :status, 'Clock'
+				= f.select :status, User::STATUSES
+				= f.submit 'Submit'
