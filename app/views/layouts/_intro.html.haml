@@ -1,4 +1,5 @@
 %section#intro
 	%header
 		%h2 Welcome to our time management system.
-	%p Clock in &amp; out. Go on Break. See how many hours you've worked.
+		- flash.each do |key, value|
+			%div{:class => "flash " + key.to_s}= value

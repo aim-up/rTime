@@ -1,9 +1,10 @@
 RTime::Application.routes.draw do
+  resources :sessions
   resources :users
   get "pages/home"
   root :to => 'pages#home'
-  
-  match '/signup',  :to => 'users#new'
+  match '/login',  :to => 'sessions#new' 
+  match '/signup', :to => 'users#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
