@@ -5,11 +5,13 @@
 			Powered by:
 			%br
 			= link_to "Ruby on Rails", "#"
-	.span-16.center.last
+	.span-16.center
 		&copy; 2011 Repro Graphix, Inc.
 		%br
 		= link_to "Home Page", "http://www.reprographix.com"
 		|
 		= link_to "ePlanroom", "http://eplanroom.reprographix.com/"
-	.span-4 &nbsp;
-
+	.span-4.last &nbsp;
+.span-24.large.last#debug
+	%p
+		= debug(params) if Rails.env.development?
