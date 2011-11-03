@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  attr_accessor :comment
   attr_accessible :email, :password, :password_confirmation,
                   :name,  :status
   validates :password,    :presence     => { :on => :create },

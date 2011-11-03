@@ -5,27 +5,46 @@
 		= Time.zone.now.strftime("%b %d")
 	.span-9
 		- if current_user
-			%p.large
-				You are currently:
+			%h3
+				Your current status is:
 				= current_user.status
 			= form_for current_user do |f|
-				= f.label :status, 'Clock'
-				= f.select :status, User::STATUSES
-				= f.submit 'Submit'
-	#punches.span-9
+				.span-2
+					= f.label      :status, 'Change to:'
+				.span-7.raise.last
+					= f.select     :status, User::STATUSES
+				.span-2
+					= f.label      :comment, 'Comment:'
+				.span-7.raise.last
+					= f.text_field :comment
+					(Optional)
+				.span-8.last
+				= f.submit     'Submit'
+	.span-14.center.last
+		%h2 Recent Activity:
+	.span-14.last
 		- if current_user && current_user.punches.any?
-			%p.large Recent Activity:
+			#punches.span-14.last
+				.span-2.center Status
+				.span-1 From
+				.span-2 - To
+				.span-4 Elapsed
+				.span-5.last Comment
 			- current_user.punches.each do |p|
-				.span-2
-					= p.status
-				.span-1
-					= p.created_at.strftime("%I:%M")
-				.span-2
-					&nbsp;
-					- if p.pull
-						= p.pull.strftime("%I:%M")
-				.span-4.last
-					&nbsp;
-					- if p.pull
-						= distance_of_time_in_words(p.created_at, p.pull)
-
+				.span-14{:class => cycle('odd_row', 'even_row')}
+					.span-2.center
+						= p.status
+					.span-1
+						= p.created_at.strftime("%I:%M")
+					.span-2
+						&nbsp;
+						- if p.pull
+							= p.pull.strftime("%I:%M")
+					.span-4
+						&nbsp;
+						- if p.pull
+							= distance_of_time_in_words(p.created_at, p.pull)
+					.span-5.last
+						&nbsp;
+						- if p.comment
+							= p.comment

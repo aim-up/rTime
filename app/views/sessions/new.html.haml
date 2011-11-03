@@ -3,11 +3,11 @@
 	= form_tag sessions_path do
 		.field.span-2
 			= label_tag :email
-		.field.span-16.last
+		.field.span-16.raise.last
 			= text_field_tag :email, params[:email]
 		.field.span-2
 			= label_tag :password
-		.field.span-16.last
+		.field.span-16.raise.last
 			= password_field_tag :password
 		.actions.span-16.last
 			= submit_tag "Log in"

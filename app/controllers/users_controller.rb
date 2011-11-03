@@ -20,7 +20,10 @@ class UsersController < ApplicationController
         @last_punch.pull = Time.zone.now
         @last_punch.save
       end
-      @punch = current_user.punches.new(:status => params[:user][:status])
+      @punch = current_user.punches.new(
+        :status  => params[:user][:status],
+        :comment => params[:user][:comment]
+        )
       if @punch.save
         redirect_to root_url, :success => "Update success!"
       end
